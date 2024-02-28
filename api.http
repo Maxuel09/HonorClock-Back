@@ -1,0 +1,16 @@
+@api = http://localhost:4000/HC/users
+### get all users
+
+GET {{api}}
+
+### create a user
+
+POST {{api}}
+Content-Type: application/json
+
+{
+ "name":"pepito",
+ "password":"ajdaj13221",
+ "email":"pepi@example.org",
+ "role":"client"
+}

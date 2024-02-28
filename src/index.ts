@@ -1,8 +1,9 @@
-import express from "express"
+import { app } from "./server";
+import { router } from "./routers/user.routes";
+import { connect } from "./database/conection";
 
-const app = express();
-const port = 4000;
 
-app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`)
-})
+connect();
+//routers
+
+app.use("/HC", router);
