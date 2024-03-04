@@ -1,10 +1,10 @@
 import { Router } from "express"
-import { createuser, getallusers } from "../models/user.model";
+import { createUserController, getAllUsersControler } from "../controllers/user.controller"
 
 
 export const router = Router()
 
 router.route("/users")
-    .get(getallusers)
-    .post(createuser)
+    .get(getAllUsersControler)
+    .post(createUserController)
    

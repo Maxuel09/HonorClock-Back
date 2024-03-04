@@ -1,13 +1,18 @@
 import User from "../schema/user";
-import { Request, Response } from "express";
 
-export const getallusers = async (req : Request, res : Response) => {
+export const getAllUsers = async () => {
      const users = await User.find();
-     res.send(users)
+     return users
+}
+type UserSchema = {
+    name: String,
+    password: String,
+    email: String,
+    role: String
 }
 
-export const createuser = async (req : Request, res : Response) => {
-    const user = new User(req.body);
-    await user.save();
-    res.send(user)
+export const createUser = async (user: UserSchema) => {
+    const newUser = new User(user);
+    await newUser.save();
+    return newUser
 }

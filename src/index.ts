@@ -8,3 +8,5 @@ connect();
 
 app.use("/HC", user);
 app.use("/HC", product)
+
+export default app
