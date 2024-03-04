@@ -1,18 +1,26 @@
 import User from "../schema/user";
 
-export const getAllUsers = async () => {
-     const users = await User.find();
-     return users
-}
-type UserSchema = {
-    name: String,
-    password: String,
-    email: String,
-    role: String
+
+const UserModel = {
+    getallUsers: async () => {
+        return await User.find();
+    },
+
+    getUser: async (user: any) => {
+        return await User.findOne(user)
+    },
+
+    createUser: async (user: any) => {
+        return await User.create(user)
+    },
+
+    updateUser: async (user: any) => {
+        return await User.findOneAndUpdate({ _id: user._id }, user, { new: true })
+    },
+
+    deleteUser: async (user: any) => {
+        return await User.findOneAndDelete({ _id: user._id })
+    }
 }
 
-export const createUser = async (user: UserSchema) => {
-    const newUser = new User(user);
-    await newUser.save();
-    return newUser
-}
+export default UserModel

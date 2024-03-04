@@ -1,10 +1,15 @@
 import { Router } from "express"
-import { createUserController, getAllUsersControler } from "../controllers/user.controller"
+import UserController from "../controllers/user.controller"
 
 
 export const router = Router()
 
 router.route("/users")
-    .get(getAllUsersControler)
-    .post(createUserController)
+    .get(UserController.getallUsers)
+    .post(UserController.createUser)
+router.route("/users/:id")
+    .get(UserController.getUser)
+    .delete(UserController.deleteUser)
+    .put(UserController.updateUser)
+
    

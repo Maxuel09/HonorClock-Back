@@ -1,9 +1,13 @@
 import { Router } from "express"
-import { createproduct, getallproduct } from "../models/product.models";
+import ProductController from "../controllers/product.controller"
 
 
 export const router = Router()
 
 router.route("/product")
-    .get(getallproduct)
-    .post(createproduct)
+    .get(ProductController.getallUsers)
+    .post(ProductController.createUser)
+router.route("/product/:id")
+    .get(ProductController.getUser)
+    .delete(ProductController.deleteUser)
+    .put(ProductController.updateUser)
