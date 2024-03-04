@@ -1,31 +1,32 @@
 import { Request, Response } from "express";
-import UserProduct from "../models/user.model";
+import UserProduct from "../models/product.model";
+import product from "../schema/product";
 
 
 const ProductController = {
-    getallUsers: async (req: Request, res: Response) => {
-        const users = await UserProduct.getallUsers();
-        res.send(users);
+    getallProduct: async (req: Request, res: Response) => {
+        const products = await UserProduct.getallProduct();
+        res.send(products);
     },
 
-    getUser: async (req: Request, res: Response) => {
-        const user = await UserProduct.getUser(req.body);
-        res.send(user);
+    getProduct: async (req: Request, res: Response) => {
+        const product = await UserProduct.getProduct(req.body);
+        res.send(product);
     },
 
-    createUser: async (req: Request, res: Response) => {
-        const user = await UserProduct.createUser(req.body);
-        res.send(user);
+    createProduct: async (req: Request, res: Response) => {
+        const product = await UserProduct.createProduct(req.body);
+        res.send(product);
     },
 
-    updateUser: async (req: Request, res: Response) => {
-        const user = await UserProduct.updateUser(req.body);
-        res.send(user);
+    updateProduct: async (req: Request, res: Response) => {
+        const product = await UserProduct.updateProduct(req.body);
+        res.send(product);
     },
 
-    deleteUser: async (req: Request, res: Response) => {
-        const user = await UserProduct.deleteUser(req.body);
-        res.send(user);
+    deleteProduct: async (req: Request, res: Response) => {
+        const product = await UserProduct.deleteProduct(req.body);
+        res.send(product);
     }
 
 

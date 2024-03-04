@@ -1,5 +1,5 @@
 import { Router } from "express"
-import { createcategory, getallcategories } from "../models/categories.models";
+import { createcategory, getallcategories } from "../models/categories.model";
 
 
 export const router = Router()
