@@ -7,7 +7,7 @@ const UserProduct = {
     },
 
     getProduct: async (user: any) => {
-        return await Product.findOne(user)
+        return await Product.findById(user)
     },
 
     createProduct: async (user: any) => {

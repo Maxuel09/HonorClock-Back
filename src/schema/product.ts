@@ -10,7 +10,11 @@ const Product = new Schema({
     "stock": Number,
     "category": String,
     "image": String
-})
+}, {
+    required: true,
+    timestamps: true
+    })
+
 
 // Call the function with the extracted string
 // model(imageUrl); // Assuming this is the correct call

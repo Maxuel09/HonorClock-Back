@@ -5,6 +5,9 @@ const User = new Schema({
     "password": String,
     "email": String,
     "role": String
+}, {
+    required: true,
+    timestamps: true
 })
 
 export default model('User', User)

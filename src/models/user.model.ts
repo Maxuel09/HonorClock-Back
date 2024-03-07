@@ -6,20 +6,21 @@ const UserModel = {
         return await User.find();
     },
 
-    getUser: async (user: any) => {
-        return await User.findOne(user)
+    getUser: async (user: string) => {
+        return await User.findOne({ _id: user })
     },
 
-    createUser: async (user: any) => {
+    createUser: async (user: string) => {
         return await User.create(user)
     },
 
-    updateUser: async (user: any) => {
-        return await User.findOneAndUpdate({ _id: user._id }, user, { new: true })
+    updateUser: async (user: string) => {
+        return await User.findByIdAndUpdate(user, { name : user.toString(), email: user.toString(), role: user.toString() }) 
+        
     },
 
-    deleteUser: async (user: any) => {
-        return await User.findOneAndDelete({ _id: user._id })
+    deleteUser: async (user: string) => {
+        return await User.findByIdAndDelete(user)
     }
 }
 

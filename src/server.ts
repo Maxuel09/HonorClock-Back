@@ -1,17 +1,15 @@
-import express from "express"
+import express,{ Application} from "express"
 import {connect} from "./database/conection"
 import dotenv from "dotenv";
 dotenv.config();
 
 
-const app = express();
+const app : Application = express();
 const port = process.env.PORT || 3000;
 
 app.use(express.json())
 
 const connectDB = async () => await connect();
-
-
 const server = app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
 })

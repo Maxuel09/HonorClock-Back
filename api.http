@@ -1,4 +1,4 @@
-@api = http://localhost:4000/HC/users
+@api = http://localhost:4001/HC/users
 ### get all users
 
 GET {{api}}
@@ -14,3 +14,6 @@ Content-Type: application/json
  "email":"pepi@example.org",
  "role":"client"
 }
+
+###
+DELETE {{api}}/65e721e58cf8c100d5f4005b
