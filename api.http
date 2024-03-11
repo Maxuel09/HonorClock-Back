@@ -1,4 +1,4 @@
-@api = http://localhost:4001/HC/users
+@api = http://localhost:4001/HC/product
 ### get all users
 
 GET {{api}}

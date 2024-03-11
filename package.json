@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "cross-env NODE_ENV=test jest --detectOpenHandles",
-    "dev": "ts-node-dev ./src/index.ts  cross-env NODDE_ENV=development ts-node-dev --respawn",
+    "dev": "ts-node-dev ./src/index.ts  cross-env NODE_ENV=development ts-node-dev --respawn",
     "build": "tsc --build"
   },
   "keywords": [],

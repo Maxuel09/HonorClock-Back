@@ -34,7 +34,7 @@ const ProductController = {
 
     updateProduct: async (req: Request, res: Response) => {
         try {
-            const product = await UserProduct.updateProduct(req.params.id);
+            const product = await UserProduct.updateProduct(req.body);
             res.json(product);
         }catch(error) {
             res.status(500).json({ message: 'Error updating product', error });
@@ -43,7 +43,7 @@ const ProductController = {
 
     deleteProduct: async (req: Request, res: Response) => {
         try {
-            const product = await UserProduct.deleteProduct(req.params.id);
+            const product = await UserProduct.deleteProduct(req.body);
             res.json(product);
         }catch(error) {
             res.status(500).json({ message: 'Error deleting product', error });

@@ -7,7 +7,7 @@ const UserModel = {
     },
 
     getUser: async (user: string) => {
-        return await User.findOne({ _id: user })
+        return await User.findById(user)
     },
 
     createUser: async (user: string) => {
