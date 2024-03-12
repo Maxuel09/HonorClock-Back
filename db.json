@@ -1,0 +1,45 @@
+[
+
+    {
+        "name": "Tecno Reloj",
+        "description": "Un compañero versátil que te ayuda a gestionar tu día a día. Monitorea tu actividad física, recibe notificaciones, controla tu música y mucho más",
+        "price": 270,
+        "stock": 21,
+        "category": "Digital",
+        "image": "https://res.cloudinary.com/dc6snm7m6/image/upload/v1709197160/tr0n.shop-product-smartwatch-grizzly3-tronshop_0001-300x300_dydf9r.jpg"
+    },
+
+{
+        "_id": {
+            "$oid": "65e1b65a888442b2b05ef19a"
+        },
+        "name": "Manecillas Atemporales",
+        "description": "Un diseño atemporal que nunca pasa de moda y aporta un toque de distinción a tu look.",
+        "price": 155,
+        "stock": 10,
+        "category": "Analógico",
+        "image": "https://res.cloudinary.com/dc6snm7m6/image/upload/v1709197155/smartwatch-lyrebi8-reloj-inteligente_003-300x300_t8irhn.jpg"
+    },
+{
+        "_id": {
+            "$oid": "65e1b83a888442b2b05ef19e"
+        },
+        "name": "Pulsera Inteligente",
+        "description": "Mantente conectado sin importar dónde estés gracias a la conexión Bluetooth con tu smartphone",
+        "price": 170,
+        "stock": 8,
+        "category": "Inteligente",
+        "image": "https://res.cloudinary.com/dc6snm7m6/image/upload/v1709197156/smartwatch-meerk5-pink-reloj-inteligente-001-600x600_lq4xid.jpg"
+    },
+{
+        "_id": {
+            "$oid": "65e1b8e4888442b2b05ef19f"
+        },
+        "name": "Ritmo Vital",
+        "description": "Un obsequio clásico y elegante que siempre será apreciado.",
+        "price": 90,
+        "stock": 7,
+        "category": "Analógico",
+        "image": "https://res.cloudinary.com/dc6snm7m6/image/upload/v1709197159/tr0n.shop-product-smartwatch-buffalo8-tronshop_001_1-300x300_dkaoli.jpg"
+    }
+]
