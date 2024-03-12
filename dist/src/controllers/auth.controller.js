@@ -14,6 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const user_1 = __importDefault(require("../schema/user"));
 const crypt_1 = require("../helpers/crypt");
+// import { createToken } from "../helpers/jwt";
 const AuthController = {
     login: (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         try {
