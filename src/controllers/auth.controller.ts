@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
 import User from "../schema/user";
 import { encryptPassword, ComparePassword } from "../helpers/crypt";
-import { createToken, verifyToken } from "../helpers/jwt";
-import user from "../schema/user";
+import { createToken } from "../helpers/jwt";
+
 
 
 const AuthController = {
@@ -16,25 +16,23 @@ const AuthController = {
 
             if (user.password) {
                 const match = ComparePassword(password, user.password);
-                !match ? res.status(401).json({ message: "password not match" }) : res.status(200).json({ message: "login success", user, })
-                
-               const token = createToken(user._id + "");
-   
-               const data = {
-                   token: token,
-                   user : {
-                       _id: user._id,
-                       name: user.name,
-                       email: user.email
-                   }
-                }
-                res.status(200).json({ data: data });
-                
-            }
+               !match ? res.status(404).json({ message: "user not exists" }) : res.status(200).json({ message: "login success" ,user })
+            } 
+            // const token = createToken(user._id + "");
+            //  const data = {
+            //     token: token,
+            //     user: {
+            //         _id: user._id,
+            //         name: user.name,
+            //         email: user.email
+            //         }
+            // }
+            //     res.status(200).json({ message: "User logged in", data: data });
+            
 
 
         } catch (error) {
-            res.status(500).json({ message: 'Error logging in', error })
+            res.status(500).json({ message: 'Error logging in'})
         }
 
 
