@@ -14,10 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const user_1 = __importDefault(require("../schema/user"));
 const crypt_1 = require("../helpers/crypt");
-<<<<<<< HEAD
-// import { createToken } from "../helpers/jwt";
-=======
->>>>>>> dev
+const jwt_1 = require("../helpers/jwt");
 const AuthController = {
     login: (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         try {
@@ -28,18 +25,20 @@ const AuthController = {
             }
             if (user.password) {
                 const match = (0, crypt_1.ComparePassword)(password, user.password);
-                !match ? res.status(404).json({ message: "user not exists" }) : res.status(200).json({ message: "login success", user });
+                if (!match) {
+                    return res.status(404).json({ message: "invalid password" });
+                }
             }
-            // const token = createToken(user._id + "");
-            //  const data = {
-            //     token: token,
-            //     user: {
-            //         _id: user._id,
-            //         name: user.name,
-            //         email: user.email
-            //         }
-            // }
-            //     res.status(200).json({ message: "User logged in", data: data });
+            const token = (0, jwt_1.createToken)(user.id);
+            const data = {
+                token: token,
+                user: {
+                    _id: user._id,
+                    name: user.name,
+                    email: user.email
+                }
+            };
+            res.status(200).json({ message: "User logged in", data: data });
         }
         catch (error) {
             res.status(500).json({ message: 'Error logging in' });
