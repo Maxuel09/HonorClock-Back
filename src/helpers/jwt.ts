@@ -8,7 +8,6 @@ const createToken = (payload: string) => {
     const token = sign({ payload }, JWT_SECRET,{
         expiresIn: '1h'
     });
-    console.log(token)
     return token;
 }
 const verifyToken = (token: string) => {
