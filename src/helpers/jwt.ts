@@ -1,12 +1,14 @@
 import { verify, sign } from "jsonwebtoken";
 
 
-const JWT_SECRET = process.env.JWT_SECRET as string;
+
+const JWT_SECRET = process.env.HASHJWT as string;
 
 const createToken = (payload: string) => {
-    const token = sign(payload, JWT_SECRET,{
+    const token = sign({ payload }, JWT_SECRET,{
         expiresIn: '1h'
     });
+    console.log(token)
     return token;
 }
 
