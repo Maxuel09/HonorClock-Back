@@ -1,13 +1,13 @@
 import { Router } from "express"
 import UserController from "../controllers/user.controller"
+import Adminauth from "../middlewares/admin.mdw"
 
 export const router = Router()
 
 router.route("/users")
-    .get(UserController.getallUsers)
-    .post(UserController.createUser)
+    .get(Adminauth,UserController.getallUsers)
 router.route("/users/:id")
-    .get(UserController.getUser)
+    .get(Adminauth,UserController.getUser)
     .delete(UserController.deleteUser)
     .put(UserController.updateUser)
 

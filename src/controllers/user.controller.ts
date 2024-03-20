@@ -21,15 +21,6 @@ const UserController = {
         }
     },
 
-    createUser: async (req: Request, res: Response) => {
-        try {
-            const user = await UserModel.createUser(req.body);
-            res.json(user);
-
-        } catch (error) {
-            res.status(500).json({ message: 'Error creating user', error });
-        }
-    },
 
     updateUser: async (req: Request, res: Response) => {
         try {

@@ -1,19 +1,28 @@
-@api = http://localhost:4001/HC/product
+@api = http://localhost:4001/HC
 ### get all users
-
-GET {{api}}
-
-### create a user
-
-POST {{api}}
+GET {{api}}/users
+Authorization:Bearer 
+###
+POST {{api}}/login
 Content-Type: application/json
 
 {
- "name":"pepito",
- "password":"ajdaj13221",
- "email":"pepi@example.org",
+    "email":"sap@example.org",
+    "password":"123"
+}
+
+### create a user
+
+POST {{api}}/register
+Content-Type: application/json
+
+{
+ "name":"sapito",
+ "password":"123",
+ "email":"sap@example.org",
  "role":"client"
 }
 
 ###
 DELETE {{api}}/65e721e58cf8c100d5f4005b
+
