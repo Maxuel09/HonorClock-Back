@@ -1,13 +1,13 @@
 @api = http://localhost:4001/HC
 ### get all users
 GET {{api}}/users
-Authorization:Bearer 
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZmFkYTY3NGM0Y2NhODRiZjg3NzY1OCIsImlhdCI6MTcxMDkzODg5NiwiZXhwIjoxNzEwOTQyNDk2fQ.VPYK45Qj9--yhsdQeXl808IPcRJx_Mc-ovlAfqrgCxA
 ###
 POST {{api}}/login
 Content-Type: application/json
 
 {
-    "email":"sap@example.org",
+    "email":"pepe@example.org",
     "password":"123"
 }
 
@@ -17,10 +17,10 @@ POST {{api}}/register
 Content-Type: application/json
 
 {
- "name":"sapito",
+ "name":"",
  "password":"123",
- "email":"sap@example.org",
- "role":"client"
+ "email":"juanete@example.org",
+ "role":""
 }
 
 ###

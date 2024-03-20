@@ -9,7 +9,6 @@ const createToken = (payload: string) => {
     return token;
 }
 const verifyToken = (token: string) => {
-    console.log(token)
     const decoded = verify(token, JWT_SECRET);
     return decoded;
 }
