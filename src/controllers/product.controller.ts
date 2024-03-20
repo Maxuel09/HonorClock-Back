@@ -1,7 +1,5 @@
 import { Request, Response } from "express";
 import UserProduct from "../models/product.model";
-import product from "../schema/product";
-
 
 const ProductController = {
     getallProduct: async (req: Request, res: Response) => {

@@ -10,9 +10,6 @@ const UserModel = {
         return await User.findById(user)
     },
 
-    createUser: async (user: string) => {
-        return await User.create(user)
-    },
 
     updateUser: async (user: string) => {
         return await User.findByIdAndUpdate(user, { name : user.toString(), email: user.toString(), role: user.toString() }) 
