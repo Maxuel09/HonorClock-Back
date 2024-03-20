@@ -16,7 +16,7 @@ exports.connect = void 0;
 const mongoose_1 = __importDefault(require("mongoose"));
 const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config({ path: ".env" });
-const endpoint = process.env.ENDPOINT || "mongodb://127.0.0.1:27017/test";
+const endpoint = process.env.ENDPOINT || "";
 const connect = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
         yield mongoose_1.default.connect(endpoint);

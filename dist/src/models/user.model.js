@@ -20,9 +20,6 @@ const UserModel = {
     getUser: (user) => __awaiter(void 0, void 0, void 0, function* () {
         return yield user_1.default.findById(user);
     }),
-    createUser: (user) => __awaiter(void 0, void 0, void 0, function* () {
-        return yield user_1.default.create(user);
-    }),
     updateUser: (user) => __awaiter(void 0, void 0, void 0, function* () {
         return yield user_1.default.findByIdAndUpdate(user, { name: user.toString(), email: user.toString(), role: user.toString() });
     }),

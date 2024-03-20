@@ -50,9 +50,11 @@ const AuthController = {
             if (user) {
                 return res.status(400).json({ message: "user already exists" });
             }
-            const { name, email, password } = req.body;
-            const registeredUser = yield user_1.default.create({ name, email, password: (0, crypt_1.encryptPassword)(password) });
-            registeredUser ? res.status(400).json({ message: "user create exists" }) : res.status(201).json(registeredUser);
+            const { name, email, password, role } = req.body;
+            const registeredUser = yield user_1.default.create({ name, email, password: (0, crypt_1.encryptPassword)(password), role: role || "client" });
+            if (registeredUser) {
+                res.status(200).json({ message: "user create exists" });
+            }
         }
         catch (error) {
             res.status(500).json({ message: 'Error registering', error });

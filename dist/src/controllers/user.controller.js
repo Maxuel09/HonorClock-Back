@@ -32,15 +32,6 @@ const UserController = {
             res.status(500).json({ message: 'Error fetching user', error });
         }
     }),
-    createUser: (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-        try {
-            const user = yield user_model_1.default.createUser(req.body);
-            res.json(user);
-        }
-        catch (error) {
-            res.status(500).json({ message: 'Error creating user', error });
-        }
-    }),
     updateUser: (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         try {
             const user = yield user_model_1.default.updateUser(req.body);

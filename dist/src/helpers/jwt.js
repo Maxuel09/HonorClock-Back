@@ -4,7 +4,7 @@ exports.verifyToken = exports.createToken = void 0;
 const jsonwebtoken_1 = require("jsonwebtoken");
 const JWT_SECRET = process.env.HASHJWT;
 const createToken = (payload) => {
-    const token = (0, jsonwebtoken_1.sign)({ payload }, JWT_SECRET, {
+    const token = (0, jsonwebtoken_1.sign)({ id: payload }, JWT_SECRET, {
         expiresIn: '1h'
     });
     return token;

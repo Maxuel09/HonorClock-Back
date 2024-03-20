@@ -6,11 +6,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.router = void 0;
 const express_1 = require("express");
 const user_controller_1 = __importDefault(require("../controllers/user.controller"));
+const admin_mdw_1 = __importDefault(require("../middlewares/admin.mdw"));
 exports.router = (0, express_1.Router)();
 exports.router.route("/users")
-    .get(user_controller_1.default.getallUsers)
-    .post(user_controller_1.default.createUser);
+    .get(admin_mdw_1.default, user_controller_1.default.getallUsers);
 exports.router.route("/users/:id")
-    .get(user_controller_1.default.getUser)
+    .get(admin_mdw_1.default, user_controller_1.default.getUser)
     .delete(user_controller_1.default.deleteUser)
     .put(user_controller_1.default.updateUser);
